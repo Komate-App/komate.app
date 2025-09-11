@@ -93,31 +93,12 @@
     <main>
       <section class="hero">
         <span class="eyebrow">Segment pacing for cyclists</span>
-        <h1>Hit your target time, on purpose.</h1>
-        <p class="sub">Komate predicts the exact watts you’ll need to match a goal time on any starred segment—accounting for wind, gradient, weight, and rolling resistance. Turn physics into a pace plan before you ride.</p>
+        <h1>Do you have watt it takes?</h1>
+        <p class="sub">Komate predicts the exact watts you’ll need to match a goal time on any starred segment—accounting for real-time wind, gradient, weight, rolling resistance and more. Turn physics into a pace plan and conquer the climb.</p>
         <div class="cta">
           <a id="early-access" class="btn btn-primary" href="https://forms.gle/replace-with-your-form" target="_blank" rel="noopener">Apply for Early Access</a>
-          <a class="btn btn-ghost" href="#demo">View quick demo</a>
         </div>
         <p class="note">No spam. We’ll ping you when the beta opens.</p>
-
-        <!-- Minimal in-page product mockup to suggest the experience -->
-        <div class="device" id="demo" aria-label="Komate demo preview">
-          <div class="statusbar"><span>Komate · Demo</span><span>v0.1</span></div>
-          <div class="viewport">
-            <div class="pill">
-              <span class="chip">Segment · Coll de Rates</span>
-              <span class="chip">Goal · 28:30</span>
-              <span class="chip">Wind · 7 km/h cross-tail</span>
-            </div>
-            <div class="rows">
-              <div class="row"><strong>Required Power</strong><small>~ 284 W</small></div>
-              <div class="row"><strong>Estimated Time @ 270 W</strong><small>29:05</small></div>
-              <div class="row"><strong>Time Gain from 1 kg lighter</strong><small>− 12 s</small></div>
-              <div class="row"><strong>CdA Improvement (−0.02)</strong><small>− 23 s</small></div>
-              <div class="row"><strong>Pacing Tip</strong><small>Push on 6–8% ramps; hold aero on false flats</small></div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
