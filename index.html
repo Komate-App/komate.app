@@ -23,13 +23,11 @@
     }
     *{box-sizing:border-box}
     html{
-      height:100%; 
       min-height:100vh;
       background: radial-gradient(1200px 600px at 80% -10%, #18201b 0%, rgba(24,32,27,0) 40%),
                   radial-gradient(900px 600px at 0% 100%, #14161c 0%, rgba(20,22,28,0) 50%),
                   #0b0b0c;
       background-color: #0b0b0c;
-      overscroll-behavior: none;
     }
 
     .full-height-container {
@@ -39,7 +37,6 @@
     
     body{
       min-height:100vh;
-      height:100vh; 
       display: flex;
       flex-direction: column;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
@@ -47,8 +44,7 @@
       margin: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      background: none;
-      background-color: transparent;
+
       padding-bottom: env(safe-area-inset-bottom);
     }
 
@@ -102,9 +98,12 @@
        text-align: center;
      }
      .foot a, .foot span {
-       width: 100%;
-    }
-   }
+       width: 100%;}
+     
+       .my-footer {
+       padding-bottom: 20px; /* Standard padding */
+       padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
 
     /* Small preview “device” */
     .device{margin:34px auto 0; width:min(960px, 94%); background:var(--card); border:1px solid #1b1c20; border-radius:20px; box-shadow:0 12px 60px -24px rgba(0,0,0,.55); overflow:hidden}
