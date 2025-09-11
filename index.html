@@ -21,7 +21,7 @@
       --brand-ink: #0a2f23;
       --ring: rgba(94,241,167,.45);
     }
-    *{box-sizing:border-box}
+
     html{
       height:100%; 
       min-height:100vh;
@@ -30,6 +30,11 @@
                   #0b0b0c;
       background-color: #0b0b0c;
       overscroll-behavior: none;
+    }
+
+    .full-height-container {
+  height: -webkit-fill-available; /* For Safari/iOS Chrome */
+  height: 100%;
     }
     
     body{
@@ -83,7 +88,7 @@
       background-color:transparent !important; 
       color:var(--text); 
       box-shadow:none; 
-      border:none}
+      border:none;}
     .foot{max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
     .foot a{color:var(--text);}
 
