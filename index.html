@@ -39,7 +39,7 @@
     .nav{opacity:.85}
     .nav a{color:var(--muted); text-decoration:none; margin-left:16px; font-size:.95rem}
 
-    main{display:grid; place-items:center; padding:44px 24px 72px}
+    main{flex: 1 0 auto; display: flex; align-items: center; justify-content: center; padding: 44px 24px 72px}
     .hero{max-width:980px; text-align:center}
     .eyebrow{display:inline-block; font-size:.8rem; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:14px}
     h1{font-size:clamp(40px, 7vw, 76px); line-height:1.05; margin:0 0 16px}
@@ -54,7 +54,7 @@
 
     .note{margin-top:14px; color:var(--muted); font-size:.92rem}
 
-    footer{margin-top:auto; padding:24px; background: var(--card); color:var(--muted)}
+    footer{margin-top:auto; padding:24px; background: transparent; color:var(--muted)}
     .foot{max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
     .foot a{color:var(--muted); text-decoration:none}
 
@@ -91,9 +91,9 @@
 
     <main>
       <section class="hero">
-        <h1>Turn physics into a pace plan and conquer the climb.</h1>
+        <h1>Turn physics into a pacing plan and conquer the climb.</h1>
         <p class="sub">Komate predicts the exact watts you’ll need to match a goal time on any Strava segment—accounting for real-time wind, gradient, weight, rolling resistance, aerodynamic drag and more.</p>
-        <p class="sub">Do you have watt it takes?</p>
+        <p class="sub">Do you have watt it takes to reach your goal?</p>
         <div class="cta">
           <a id="early-access" class="btn btn-primary" href="https://forms.gle/replace-with-your-form" target="_blank" rel="noopener">Apply for Early Access</a>
           <a class="btn btn-ghost" href="https://forms.gle/replace-with-your-form" target="_blank" rel="noopener">Give Feedback</a>
@@ -105,6 +105,7 @@
     <footer>
       <div class="foot">
         <span>© Komate, 2025</span>
+        <img src="powered_by_strava.svg" alt="Powered by Strava" style="height:18px;">
         <a id="contact" href="mailto:hello@komate.app">hello@komate.app</a>
       </div>
     </footer>
