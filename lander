@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Komate — Segment pacing, solved.</title>
+  <meta name="description" content="Komate gives cyclists the exact watts to hit a target time on any Strava segment—factoring wind, grade, weight, and more." />
+  <meta property="og:title" content="Komate — Segment pacing, solved." />
+  <meta property="og:description" content="Know the watts to win the segment." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://komate.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg: #0b0b0c;
+      --card: #121214;
+      --text: #f6f7f9;
+      --muted: #a7abb3;
+      --brand: #5ef1a7;
+      --brand-ink: #0a2f23;
+      --ring: rgba(94,241,167,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      background: radial-gradient(1200px 600px at 80% -10%, #18201b 0%, rgba(24,32,27,0) 40%),
+                  radial-gradient(900px 600px at 0% 100%, #14161c 0%, rgba(20,22,28,0) 50%),
+                  var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap{display:flex; min-height:100%; flex-direction:column}
+    header{display:flex; align-items:center; justify-content:space-between; padding:20px 24px; max-width:980px; margin:0 auto; width:100%}
+    .logo{display:inline-flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .logo-badge{width:28px; height:28px; border-radius:10px; background:linear-gradient(160deg, var(--brand), #8df3c3); display:grid; place-items:center; box-shadow:0 0 0 6px rgba(94,241,167,.08)}
+    .logo-badge svg{width:16px; height:16px; fill:var(--brand-ink)}
+    .nav{opacity:.85}
+    .nav a{color:var(--muted); text-decoration:none; margin-left:16px; font-size:.95rem}
+
+    main{display:grid; place-items:center; padding:44px 24px 72px}
+    .hero{max-width:980px; text-align:center}
+    .eyebrow{display:inline-block; font-size:.8rem; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:14px}
+    h1{font-size:clamp(40px, 7vw, 76px); line-height:1.05; margin:0 0 16px}
+    .sub{max-width:720px; margin:0 auto 28px; color:#d3d6dd; font-size:clamp(16px, 2.2vw, 20px)}
+
+    .cta{display:inline-flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center}
+    .btn{appearance:none; border:0; padding:14px 22px; border-radius:12px; font-weight:600; letter-spacing:.2px; cursor:pointer; text-decoration:none; transition:transform .06s ease-out, box-shadow .2s ease}
+    .btn-primary{background:var(--brand); color:var(--brand-ink); box-shadow:0 8px 24px -8px var(--ring)}
+    .btn-primary:hover{transform:translateY(-1px); box-shadow:0 14px 34px -12px var(--ring)}
+    .btn-ghost{background:transparent; color:var(--text); border:1px solid #26262a}
+    .btn-ghost:hover{border-color:#2f2f36}
+
+    .note{margin-top:14px; color:var(--muted); font-size:.92rem}
+
+    footer{margin-top:auto; padding:24px; border-top:1px solid #1b1c20; color:var(--muted)}
+    .foot{max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .foot a{color:var(--muted); text-decoration:none}
+
+    /* Small preview “device” */
+    .device{margin:34px auto 0; width:min(960px, 94%); background:var(--card); border:1px solid #1b1c20; border-radius:20px; box-shadow:0 12px 60px -24px rgba(0,0,0,.55); overflow:hidden}
+    .statusbar{display:flex; justify-content:space-between; padding:10px 14px; font-size:12px; color:#9aa0aa; border-bottom:1px solid #1b1c20; background:linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
+    .viewport{padding:28px; display:grid; gap:16px}
+    .chip{display:inline-flex; gap:8px; align-items:center; border:1px solid #232429; color:#c7cbd4; border-radius:999px; padding:8px 12px; font-size:12px}
+    .pill{display:inline-flex; gap:10px; align-items:center}
+    .rows{display:grid; gap:8px}
+    .row{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; background:#101114; border:1px solid #1b1c20; border-radius:12px}
+    .row small{color:#9aa0aa}
+
+    @media (max-width:600px){
+      header{padding:16px}
+      .rows .row{padding:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-label="Komate">
+        <span class="logo-badge" aria-hidden="true">
+          <!-- simple bolt icon -->
+          <svg viewBox="0 0 24 24" role="img" aria-label="Komate icon"><path d="M13.2 2 6.1 12.8h4.8L9.8 22l8.1-10.8h-4.8L13.2 2z"/></svg>
+        </span>
+        <span>Komate</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#early-access">Early Access</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Segment pacing for cyclists</span>
+        <h1>Hit your target time, on purpose.</h1>
+        <p class="sub">Komate predicts the exact watts you’ll need to match a goal time on any starred segment—accounting for wind, gradient, weight, and rolling resistance. Turn physics into a pace plan before you ride.</p>
+        <div class="cta">
+          <a id="early-access" class="btn btn-primary" href="https://forms.gle/replace-with-your-form" target="_blank" rel="noopener">Apply for Early Access</a>
+          <a class="btn btn-ghost" href="#demo">View quick demo</a>
+        </div>
+        <p class="note">No spam. We’ll ping you when the beta opens.</p>
+
+        <!-- Minimal in-page product mockup to suggest the experience -->
+        <div class="device" id="demo" aria-label="Komate demo preview">
+          <div class="statusbar"><span>Komate · Demo</span><span>v0.1</span></div>
+          <div class="viewport">
+            <div class="pill">
+              <span class="chip">Segment · Coll de Rates</span>
+              <span class="chip">Goal · 28:30</span>
+              <span class="chip">Wind · 7 km/h cross-tail</span>
+            </div>
+            <div class="rows">
+              <div class="row"><strong>Required Power</strong><small>~ 284 W</small></div>
+              <div class="row"><strong>Estimated Time @ 270 W</strong><small>29:05</small></div>
+              <div class="row"><strong>Time Gain from 1 kg lighter</strong><small>− 12 s</small></div>
+              <div class="row"><strong>CdA Improvement (−0.02)</strong><small>− 23 s</small></div>
+              <div class="row"><strong>Pacing Tip</strong><small>Push on 6–8% ramps; hold aero on false flats</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot">
+        <span>© Komate, 2025</span>
+        <a id="contact" href="mailto:hello@komate.app">hello@komate.app</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
