@@ -17,9 +17,9 @@
       --card: #121214;
       --text: #f6f7f9;
       --muted: #a7abb3;
-      --brand: #5ef1a7;
+      --brand: #daaa3c;
       --brand-ink: #0a2f23;
-      --ring: rgba(94,241,167,.45);
+      --ring: rgba(255, 240, 30, 0.452);
     }
     *{box-sizing:border-box}
     html{
@@ -101,7 +101,7 @@
        width: 100%;}
      
        .my-footer {
-       padding-bottom: 20px; /* Standard padding */
+       padding-bottom: 20px;
        padding-bottom: calc(20px + env(safe-area-inset-bottom));
 }
 
@@ -123,17 +123,13 @@
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="logo" aria-label="Komate">
-        <span class="logo-badge" aria-hidden="true">
-          <!-- simple bolt icon -->
-          <svg viewBox="0 0 24 24" role="img" aria-label="Komate icon"><path d="M13.2 2 6.1 12.8h4.8L9.8 22l8.1-10.8h-4.8L13.2 2z"/></svg>
-        </span>
-        <span>Komate</span>
-      </div>
+   <header>
       <nav class="nav" aria-label="Primary">
       </nav>
-    </header>
+      <div class="logo" aria-label="Komate">
+        <img src="weblogo.png" alt="Komate" style="width: 80px; height:80px;">
+      </div>
+   </header>
 
     <main>
       <section class="hero">
