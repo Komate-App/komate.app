@@ -3,126 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Komate — Conquer the climb.</title>
+  <title>Komate | Know watt it takes</title>
   <meta name="description" content="Komate gives cyclists the exact watts to hit a target time on any Strava segment—factoring wind, grade, weight, and more." />
-  <meta property="og:title" content="Komate — Conquer the climb." />
-  <meta property="og:description" content="Do you have watt it takes?" />
+  <meta property="og:title" content="Komate | Know watt it takes" />
+  <meta property="og:description" content="Sign up for early access to Komate and start pacing your Strava segments to perfection. You decide where and when, and Komate tells you watt it takes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://komate.app/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="/favicon.ico" />
-  <style>
-    :root{
-      --bg: #0c120b;
-      --card: #0f130b;
-      --text: #f6f7f9;
-      --muted: #a7abb3;
-      --brand: #daaa3c;
-      --brand-ink: #071f17;
-      --ring: rgba(255, 240, 30, 0);
-    }
-    *{box-sizing:border-box}
-    html{
-      min-height:100vh;
-      background:linear-gradient(rgba(17, 33, 23, 0.75), rgba(16, 33, 22, 0.786)), /* Color overlay */
-    url('Komatebackground.jpg') center center/cover no-repeat, /* Background image */
-                  radial-gradient(1200px 600px at 80% -10%, #111c16 0%, rgba(17, 33, 23, 0.439) 40%),
-                  radial-gradient(900px 600px at 0% 100%, #14161c 0%, rgba(16, 33, 22, 0.534) 80%),
-                  #121c0d;
-      background-color: #11180e;
-    }
-
-    .full-height-container {
-  height: -webkit-fill-available; /* For Safari/iOS Chrome */
-  height: 100%;
-    }
-    
-    body{
-      min-height:100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
-      color: var(--text);
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    .wrap{
-      flex: 1 0 auto; 
-      display:flex; 
-      flex-direction:column;
-    }
-
-    header{display:flex; align-items:center; justify-content:space-between; padding:20px 24px; max-width:980px; margin:0 auto; width:100%}
-    .logo{display:inline-flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
-    .logo-badge{width:28px; height:28px; border-radius:10px; background:linear-gradient(160deg, var(--brand), #8df3c3); display:grid; place-items:center; box-shadow:0 0 0 6px rgba(94,241,167,.08)}
-    .logo-badge svg{width:16px; height:16px; fill:var(--brand-ink)}
-    .nav{opacity:.85}
-    .nav a{color:var(--muted); text-decoration:none; margin-left:16px; font-size:.95rem}
-
-    main{flex: 1 0 auto; display: flex; align-items: center; justify-content: center; padding: 44px 24px 72px}
-    .hero{max-width:980px; text-align:center}
-    .eyebrow{display:inline-block; font-size:.8rem; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:14px}
-    h1{font-size:clamp(40px, 7vw, 76px); line-height:1.05; margin:0 0 16px}
-    .sub{max-width:720px; margin:0 auto 28px; color:#d3d6dd; font-size:clamp(16px, 2.2vw, 20px)}
-
-    .cta{display:inline-flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center}
-    .btn{appearance:none; padding:14px 22px; border-radius:12px; font-weight:600; letter-spacing:.2px; cursor:pointer; text-decoration:none;}
-    .btn-primary{background:var(--brand); color:var(--brand-ink); border:1px solid #daaa3c}
-    .btn-primary:hover{background:transparent; color:var(--text); border-color:solid #daaa3c}
-    .btn-ghost{background:transparent; color:var(--text); border:1px solid #f6f7f9}
-    .btn-ghost:hover{border-color:#2f2f36}
-
-    .note{margin-top:14px; color:var(--muted); font-size:.92rem}
-
-    footer{
-      margin-top:auto; 
-      padding:24px; 
-      padding-bottom: calc(24px + env(safe-area-inset-bottom));
-      background:none !important; 
-      background-color:transparent !important; 
-      color:var(--text); 
-      box-shadow:none; 
-      border:none;}
-    .foot{max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-    .foot a{color:var(--text);}
-
-    @media (max-width:600px){
-      header{padding:16px}
-     .rows .row{padding:12px}
-     .foot {
-       flex-direction: column;
-       align-items: center;
-       gap: 8px;
-       text-align: center;
-     }
-     .foot a, .foot span {
-       width: 100%;}
-     
-       .my-footer {
-       padding-bottom: 20px;
-       padding-bottom: calc(20px + env(safe-area-inset-bottom));
-}
-
-    /* Small preview “device” */
-    .device{margin:34px auto 0; width:min(960px, 94%); background:var(--card); border:1px solid #1b1c20; border-radius:20px; box-shadow:0 12px 60px -24px rgba(0,0,0,.55); overflow:hidden}
-    .statusbar{display:flex; justify-content:space-between; padding:10px 14px; font-size:12px; color:#9aa0aa; border-bottom:1px solid #1b1c20; background:linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
-    .viewport{padding:28px; display:grid; gap:16px}
-    .chip{display:inline-flex; gap:8px; align-items:center; border:1px solid #232429; color:#c7cbd4; border-radius:999px; padding:8px 12px; font-size:12px}
-    .pill{display:inline-flex; gap:10px; align-items:center}
-    .rows{display:grid; gap:8px}
-    .row{display:flex; align-items:center; justify-content:space-between; padding:14px 16px; background:#101114; border:1px solid #1b1c20; border-radius:12px}
-    .row small{color:#9aa0aa}
-
-    @media (max-width:600px){
-      header{padding:16px}
-      .rows .row{padding:12px}
-    }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="wrap">
@@ -130,20 +18,20 @@
       <nav class="nav" aria-label="Primary">
       </nav>
       <div class="logo" aria-label="Komate">
-        <img src="/kbolt.PNG" alt="Komate" style="width: 80px; height:80px;">
+        <img src="kbolt.png" alt="Komate" style="width: 80px; height:80px;">
       </div>
    </header>
 
     <main>
       <section class="hero">
         <h1>Transform your pacing plan and conquer the climb.</h1>
-        <p class="sub">Komate predicts the exact watts you’ll need to match a goal time on any Strava segment—accounting for real-time wind, gradient, weight, rolling resistance, aerodynamic drag and more.</p>
+        <p class="sub">Komate predicts the exact watts required to hit your target time on your favorite Strava segments—accounting for real-time wind, gradient, weight, rolling resistance, aerodynamic drag, and more.</p>
         <p class="sub">Do you have watt it takes to reach your goal?</p>
         <div class="cta">
           <a id="early-access" class="btn btn-primary" href="https://3d6d7a655ba4.quillforms.app/forms/komate-feedback-survey-copy" target="_blank" rel="noopener">Apply for Early Access</a>
           <a class="btn btn-ghost" href="https://3d6d7a655ba4.quillforms.app/forms/komate-feedback-survey" target="_blank" rel="noopener">Give Feedback</a>
         </div>
-        <p class="note">No spam. We’ll ping you when the beta opens.</p>
+        <p class="note">No spam. We'll ping you when the beta opens.</p>
       </section>
     </main>
 
