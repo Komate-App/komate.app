@@ -16,6 +16,7 @@ url('Komatebackground.jpg') center center/cover no-repeat, /* Background image *
               radial-gradient(900px 600px at 0% 100%, #14161c 0%, rgba(16, 33, 22, 0.534) 80%),
               #121c0d;
   background-color: #11180e;
+  --darkreader-ignore: true;
 }
 
 .full-height-container {
